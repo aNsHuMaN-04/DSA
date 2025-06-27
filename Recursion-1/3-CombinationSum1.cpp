@@ -10,11 +10,11 @@ void solve(vector<int>& nums, int target, int i, vector<int>& ds, vector<vector<
 
     if (nums[i] <= target) {
         ds.push_back(nums[i]);
-        solve(nums, target - nums[i], i, ds, ans);
+        solve(nums, target - nums[i], i, ds, ans); // Same element can be reused unlimited no. of times
         ds.pop_back();
     }
 
-    solve(nums, target, i + 1, ds, ans);
+    solve(nums, target, i + 1, ds, ans); // Skip and move to next element
 }
 
 vector<vector<int>> combinationSum(vector<int>& nums, int target) {
