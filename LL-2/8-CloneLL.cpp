@@ -15,9 +15,8 @@ public:
     }
 };
 
+// Appraoch -1 : Using Map
 
-class Solution {
-public:
     Node* copyRandomList(Node* head) {
      unordered_map<Node*, Node*> mpp;
      Node* temp = head;
@@ -46,4 +45,6 @@ public:
     
     return mpp[head];
 }
-};
+
+// Approach -2 : 
+
