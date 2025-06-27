@@ -44,7 +44,7 @@ void sumK_allSubsequence(int i, vector<int> nums, vector<int>& ds, vector<vector
     sum -= nums[i];
 	sumK_allSubsequence(i + 1, nums, ds, ans, sum, k);
 
-} //Not passing sum as refernce cuz we cahnge it's value and then only pass it to the recursive func every time
+} //Not passing sum as reference cuz we change it's value and then only pass it to the recursive func every time
 
 
 
