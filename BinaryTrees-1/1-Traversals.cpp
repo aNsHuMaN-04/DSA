@@ -32,6 +32,7 @@ struct TreeNode {
     preOrderTraversal(root->right, preorder);
     preorder.push_back(root->val);
 }
+
  void postOrderTraversal(TreeNode* root, vector<int>& postorder)
 {
     if(root == NULL)
@@ -42,9 +43,8 @@ struct TreeNode {
     postorder.push_back(root->val);
 }
  
- 
- 
- vector<int> Traversal(TreeNode* root) {
+    vector<int> Traversal(TreeNode* root)
+     {
         vector<int> inorder;
         vector<int> preorder;
         vector<int> postorder;
