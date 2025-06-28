@@ -33,7 +33,7 @@ vector<int> MorrisInorder(TreeNode* root) {
 
                 TreeNode* prev = cur->left;
 
-                while (prev->right && prev->right != cur) {
+                while (prev->right != NULL && prev->right != cur) {
                     prev = prev->right;
                 }
                 
@@ -43,7 +43,8 @@ vector<int> MorrisInorder(TreeNode* root) {
                     cur = cur->left;
                 } 
                 
-                else    // If the predecessor's right child is already linked, remove the link, add current node to inorder vector,
+                else    //i.e. prev->right == curr 
+                        // If the predecessor's right child is already linked, remove the link, add current node to inorder vector,
                         //and move to the right child
                 
                 {
