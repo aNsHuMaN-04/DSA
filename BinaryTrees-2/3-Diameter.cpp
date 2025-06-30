@@ -13,7 +13,7 @@ struct TreeNode {
   };
 
 
-  // Appraoch - 1: Call a GetHeight function for both right and left at each node and return their sum (max)
+  // Approach - 1: Call a GetHeight function for both right and left at each node and return their sum (max)
 
   // Approach - 2 : Same concept but without using  function call to another getHeight function
                  // Code is exactly the same of Height with just keeping a diameter variable at each node
