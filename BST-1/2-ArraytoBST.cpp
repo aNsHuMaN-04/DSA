@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
+
+// Inorder to BST
 // Definition for a binary tree node.
  
 struct TreeNode {
