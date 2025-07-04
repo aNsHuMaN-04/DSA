@@ -12,7 +12,8 @@ struct TreeNode {
       TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
   };
   
- 
+ //Recusive Approach :
+
  void flatten(TreeNode* root) {
         TreeNode* prev = NULL;
         solve(root, prev);
@@ -30,4 +31,35 @@ struct TreeNode {
         root->left = NULL;
 
         prev = root;
+    }
+
+
+    // Stack Based Iterative Approach
+
+      void flatten(TreeNode* root) {
+        if (root == NULL)
+            return;
+
+        stack<TreeNode*> st;
+        st.push(root);
+
+        while (!st.empty()) {
+            TreeNode* cur = st.top();
+            st.pop();
+
+            // Push right child first so left child is processed first
+            if (cur->right != NULL) {
+                st.push(cur->right);
+            }
+
+            if (cur->left != NULL) {
+                st.push(cur->left);
+            }
+
+            if (!st.empty()) {
+                cur->right = st.top();
+            }
+
+            cur->left = NULL;
+        }
     }
