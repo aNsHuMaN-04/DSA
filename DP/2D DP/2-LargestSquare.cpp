@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int solve(vector<vector<int>> mat, int i, int j, int& maxi)
+{
+    if(i >= mat.size() || j >= mat[0].size())
+        return 0;
+
+    int right = solve(mat, i, j + 1, maxi);
+    int diagonal = solve(mat, i + 1, j + 1, maxi);
+    int down = solve(mat, i + 1, j, maxi);
+
+    if(mat[i][j] == 1)
+    {
+        int ans = 1 + min(right, min(diagonal, down));
+    }
+}
