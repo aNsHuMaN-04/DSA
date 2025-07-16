@@ -13,5 +13,17 @@ int solve(vector<vector<int>> mat, int i, int j, int& maxi)
     if(mat[i][j] == 1)
     {
         int ans = 1 + min(right, min(diagonal, down));
+        maxi = max(maxi, ans);
+        return ans;
     }
+
+    else
+        return 0;
+}
+
+int MaxSquare(vector<vector<int>> mat)
+{
+    int maxi = 0;
+    solve(mat, 0, 0, maxi);
+    return maxi;
 }
