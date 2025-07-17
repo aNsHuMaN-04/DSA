@@ -32,6 +32,7 @@ int MaxSquare(vector<vector<int>> mat, int n, int m)
     vector<vector<int>> dp(n, vector<int>(m, -1));
     solveMem(mat, 0, 0, maxi, dp);
     return maxi;
+    
 }
 
 int solveMem(vector<vector<int>> mat, int i, int j, int& maxi, vector<vector<int>>& dp)
