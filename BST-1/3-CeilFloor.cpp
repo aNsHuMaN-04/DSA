@@ -53,9 +53,11 @@ int ceilBST(TreeNode* root, int key) {
     } else {
         // Look in left subtree
         int ceil = ceilBST(root->left, key);
+
         if (ceil != INT_MIN && ceil >= key)
             return ceil;
-        else
+
+            else
             return root->val;
     }
 }
