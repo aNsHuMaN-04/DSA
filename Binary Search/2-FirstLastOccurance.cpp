@@ -32,7 +32,7 @@ using namespace std;
         }
         return ans;
     }
-
+    
     vector<int> searchRange(vector<int>& nums, int target) {
         int first = findFirst(nums, target);
         int last = findLast(nums, target);
