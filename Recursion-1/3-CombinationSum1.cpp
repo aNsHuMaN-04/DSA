@@ -8,7 +8,7 @@ void solve(vector<int>& nums, int target, int i, vector<int>& ds, vector<vector<
         return;
     }
 
-    if (nums[i] <= target) {
+    if ([i] <= target) {
         ds.push_back(nums[i]);
         solve(nums, target - nums[i], i, ds, ans); // Same element can be reused unlimited no. of times
         ds.pop_back();
