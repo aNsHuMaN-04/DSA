@@ -16,7 +16,7 @@ using namespace std;
     }
 
 
-// Approach - 2 : O(n) : Floyd's Cycle Detetction
+// Approach - 2 : O(n) : Floyd's Cycle Detetction (Fast Slow Method) :
 
 int findDuplicate(vector < int > & nums) {
   int slow = nums[0];
