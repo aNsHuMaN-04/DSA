@@ -1,6 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// BFS method 
+
+bool detectBFS(int src, vector<int> adj[], vector<int>& vis) {
+    vis[src] = true;
+
+    queue<pair<int, int>> q;
+    q.push({src, -1});
+
+    while(!q.empty()) {
+        int node = q.front().first;
+        int parent = q.front().second;
+        q.pop();
+
+        for(auto it : adj[node]) {
+            if(!vis[it]) {
+                vis[it] = true;
+                q.push({it, node});
+            }
+            
+            else if(parent != it) {
+                return true;
+            }
+        }
+    }
+
+
+}
+
+
+
+
 
     bool dfs(int node, int parent, vector<int> adj[], vector<int>& visited) {
         
@@ -32,5 +63,7 @@ using namespace std;
         }
         return false;
     }
+
+
 
 

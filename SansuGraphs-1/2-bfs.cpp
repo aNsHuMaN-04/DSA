@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Starts BFS from only one given node (start).
+// It visits only the nodes reachable from start.
+// If the graph is disconnected, nodes in other components will never print
+
 void bfs(int start, vector<vector<int>>& adj) {
     vector<bool> visited(adj.size(), false);
     queue<int> q;
@@ -21,6 +25,10 @@ void bfs(int start, vector<vector<int>>& adj) {
         }
     }
 }
+
+// This is BFS for the entire graph.
+// It runs BFS from every node that is still unvisited.
+// So it covers all connected components and prints every vertex exactly once.
 
 void bfsTraversal(vector<vector<int>>& adj) {
     int V = adj.size();
