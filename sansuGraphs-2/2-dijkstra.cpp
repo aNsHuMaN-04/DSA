@@ -1,4 +1,4 @@
-vector<int> dijkstra(vector<vector<int>>& adj, int V, int src) {
+vector<int> dijkstra(vector<vector<pair<int,int>>>& adj, int V, int src) {
 
      priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
      
@@ -17,8 +17,8 @@ vector<int> dijkstra(vector<vector<int>>& adj, int V, int src) {
         pq.pop();
 
         for(auto it : adj[node]) { 
-            int adjNode = it[0];
-            int wt = it[1];
+            int adjNode = it.first;
+            int wt = it.second;
             if(d + wt < dist[adjNode]) {
                 dist[adjNode] = d + wt;
                 pq.push({dist[adjNode], adjNode});
