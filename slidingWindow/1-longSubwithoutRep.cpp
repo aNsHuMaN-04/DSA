@@ -25,18 +25,23 @@ int lengthOfLongestSubstring(string s) {
     int lengthOfLongestSubstring(string s) {
         int n = s.length();
         if (n == 0) return 0;
-        int res = 0;
+        int maxLen = 0;
         
-        vector<int> lastIndex(128, -1); 
-        int start = 0; 
+        vector<int> hash(128, -1); 
+        int l = 0, r = 0; 
 
-        for (int end = 0; end < n; end++) {
-            start = max(start, lastIndex[s[end]] + 1);
+        while(r < n) {
 
-            res = max(res, end - start + 1);
+            if(hash[s[r]] != -1) {
+                if(hash[s[r]] >= l) 
+                    l = hash[s[r]] + 1;
+            }
 
-           
-            lastIndex[s[end]] = end;
+            hash[s[r]] = r;
+            maxLen = max(maxLen, r - l + 1);
+            r++;
+
         }
-        return res;
+
+        return maxLen;
     }
