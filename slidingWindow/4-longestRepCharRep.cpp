@@ -1,4 +1,26 @@
+// Intuition - Naive 
 
+int characterReplacement(string s, int k) {
+    int maxLen = 0;
+    for(int i = 0; i < s.length(); i++) {
+        int hash[26] = {0};
+        int replaced = 0;
+        for(int j = i; j < s.length(); j++) {
+            hash[s[j] - 'A']++;
+            maxFreq = max(maxFreq, hash[s[j] - 'A']);
+            changes = (j - i + 1) - maxFreq; // Window Size - Frequency ofthe most frequent character in that window
+           
+            if(changes <= k) 
+                maxLen = max(maxLen, j - i + 1);
+            else 
+                break;
+    }
+    return maxLen;
+}
+
+}
+    
+    
     int characterReplacement(string s, int k) {
         int n = s.length();
         int ans = 0;
