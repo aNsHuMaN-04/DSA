@@ -100,3 +100,15 @@ int countSubsequence(int i, vector<int> nums, int sum, int k)
     return left + right;
 }
 
+// or 
+int solve(int index, int currSum)
+{
+    if(index == n)
+        return (currSum == target);
+
+    int take = solve(index + 1, currSum + nums[index]);
+
+    int notTake = solve(index + 1, currSum);
+
+    return take + notTake;
+}
