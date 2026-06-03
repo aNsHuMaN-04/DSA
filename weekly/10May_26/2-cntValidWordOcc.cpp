@@ -5,35 +5,53 @@ public:
         return false;
     }
     vector<int> countWordOccurrences(vector<string>& chunks, vector<string>& queries) {
-        unordered_map<string,int>mp;
-        string curr="";
-        string s="";
-        for(string str:chunks)s+=str;
-        int  n=s.size();
-        for(int i=0;i<n;i++){
-            char ch=s[i];
-            if(isLow(ch))curr+=ch;
-            else if(ch=='-'){
-               if(curr.size()!=0 && i+1<n && isLow(s[i+1]))curr+='-';
-               else{
-                    if(curr.size()!=0){
+        
+        unordered_map<string, int> mp;
+        string curr = "";
+        string s = "";
+
+        for(string it : chunks)
+            s += it;
+        
+        int n = s.size();
+
+        for(int i = 0; i < n; i++) {
+
+            char ch = s[i];
+            
+            if(isLow(ch))   
+                curr += ch;
+            
+            else if(ch == '-') {
+               
+               if(curr.size() != 0 && i + 1 < n && isLow(s[i+1]))
+                    curr += '-';
+               
+               else {
+                    if(curr.size() != 0) {
                     mp[curr]++;
-                    curr="";
+                    curr = "";
                 }
                }
             }
-            else{
-                if(curr.size()!=0){
+            else {
+                if(curr.size() != 0){
                     mp[curr]++;
-                    curr="";
+                    curr = "";
                 }
             }
         }
         
-        if(curr.size()!=0)mp[curr]++;
+        if(curr.size() != 0)
+            mp[curr]++;
+        
         vector<int>ans;
-        for(string str:queries){
-            if(mp.find(str)!=mp.end())ans.push_back(mp[str]);
+        
+        for(string it : queries) {
+            
+            if(mp.find(it) != mp.end())
+                ans.push_back(mp[it]);
+            
             else ans.push_back(0);
         }
         return ans;
