@@ -2,7 +2,8 @@ int solve(int i, int prev, vector<int>& arr, vector<vector<int>>& dp, int n) {
 
     if(i == n) return 0;
 
-    if(dp[i][prev + 1] != -1) return dp[i][prev + 1];
+    if(dp[i][prev + 1] != -1) 
+        return dp[i][prev + 1];
 
     int not_take = 0 + solve(i + 1, prev, arr, dp, n);
 
